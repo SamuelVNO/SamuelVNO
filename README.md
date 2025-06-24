@@ -5,7 +5,7 @@
 - 🔭 I’m currently working with **Next.js**, **React**, **Angular**, and **Framework7**  
 - 🌱 I’m learning and applying **low-code automation** using **N8N** and **Supabase**
 - 💬 Ask me about **JavaScript**, **TypeScript**, **PHP**, and **Node.js**
-- 📫 How to reach me: [LinkedIn](https://linkedin.com/in/seu-usuario) | [Email](mailto:seu@email.com)
+- 📫 How to reach me: [LinkedIn](www.linkedin.com/in/samuelvno) | [Email](mailto:samvitor53@gmail.com)
 
 ---
 
@@ -36,10 +36,10 @@
 ### 🔗 Connect with me:
 
 <p>
-  <a href="https://linkedin.com/in/seu-usuario">
+  <a href="https://linkedin.com/in/samuelvno">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white"/>
   </a>
-  <a href="mailto:seu@email.com">
+  <a href="mailto:samvitor53@gmail.com">
     <img src="https://img.shields.io/badge/Gmail-red?style=for-the-badge&logo=gmail&logoColor=white"/>
   </a>
 </p>
