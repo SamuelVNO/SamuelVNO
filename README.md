@@ -1,4 +1,7 @@
-## 👋 Hi, I'm Samuel
+# 👋 Hi, I'm Samuel
+
+<details open>
+  <summary>🇺🇸 English</summary>
 
 ### 💼 Full Stack Developer | Passionate About Web Technologies and Scalable Solutions
 
@@ -7,6 +10,21 @@ Professional with **1.5 years of experience at E-Tech**, working on the maintena
 Skilled in both **relational and non-relational databases**, such as **PostgreSQL**, **MySQL**, and **MongoDB**. I also hold certifications in **Power BI**, **Docker**, and **Kubernetes** (basic level), demonstrating my versatility across development, infrastructure, and data analytics.
 
 An **adaptable**, **committed**, and **results-driven** professional focused on delivering robust, efficient, and scalable solutions across various technologies and ecosystems.
+
+</details>
+
+<details>
+  <summary>🇧🇷 Português (Brasil)</summary>
+
+### 💼 Desenvolvedor Full Stack | Apaixonado por Tecnologias Web e Soluções Escaláveis
+
+Profissional com **1,5 anos de experiência na E-Tech**, atuando na manutenção e evolução de sistemas legados utilizando **Framework7** e **PHP** (back-end). Também envolvido em projetos modernos com **Next.js**, **React.js** e **Angular**, com experiência prática em **Python**, **Java** e **AWS**.
+
+Conhecimento em **bancos de dados relacionais e não relacionais**, como **PostgreSQL**, **MySQL** e **MongoDB**. Possui certificações em **Power BI**, **Docker** e **Kubernetes** (nível básico), evidenciando sua versatilidade em ambientes de desenvolvimento, infraestrutura e análise de dados.
+
+Profissional **adaptável**, **comprometido** e focado em entregar soluções robustas, eficientes e escaláveis em diferentes stacks e ecossistemas.
+
+</details>
 
 ---
 
