@@ -1,7 +1,7 @@
 <div style="position: relative; padding: 2rem; background-color: #0d1117; color: white; font-family: 'Segoe UI', sans-serif; border-radius: 10px; overflow: hidden;">
 
   <!-- Notebook Gamer (decorativo) -->
-  <img src="https://i.imgur.com/Elwh7sV.png" alt="Notebook Gamer" style="position: absolute; top: 10%; right: -50px; width: 400px; max-width: 100%; opacity: 0.07; z-index: 0; pointer-events: none;" />
+  <img src="https://i.ibb.co/TBq9Zb3/notebook-coding.png" alt="Notebook Coding Style" style="width: 400px;" />
 
   <!-- Simulated code on screen -->
   <pre style="position: absolute; top: 70px; right: 80px; width: 250px; font-size: 10px; line-height: 1.2; color: #00ff95; font-family: 'Courier New', monospace; white-space: pre-wrap; opacity: 0.15; z-index: 1;">
