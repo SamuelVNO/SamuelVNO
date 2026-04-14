@@ -3,54 +3,56 @@
 <details open>
   <summary>🇺🇸 English</summary>
 
-### 💼 Full Stack Developer | Passionate About Web Technologies and Scalable Solutions
+### 💼 Full Stack Software Engineer | 7+ Years of Coding Experience
+Professional with a solid background in software development, starting my journey at age 14. Currently contributing to **E-Tech**, where I modernize legacy systems using **PHP** and **Framework7**, while also architecting modern applications with **Next.js**, **React**, and **Angular**.
 
-Professional with **1.5 years of experience at E-Tech**, working on the maintenance and evolution of legacy systems using **Framework7** and **PHP** (back-end). Also involved in modern projects with **Next.js**, **React.js**, and **Angular**, with hands-on experience in **Python**, **Java**, and **AWS**.
+I specialize in building scalable solutions and intelligent workflows using:
+* **Backend & Automation:** Node.js (NestJS), PHP, Python, and n8n.
+* **Frontend:** Next.js, React, TypeScript, and Tailwind CSS.
+* **Infrastructure & Data:** AWS, Docker, Kubernetes, PostgreSQL, and MongoDB.
 
-Skilled in both **relational and non-relational databases**, such as **PostgreSQL**, **MySQL**, and **MongoDB**. I also hold certifications in **Power BI**, **Docker**, and **Kubernetes** (basic level), demonstrating my versatility across development, infrastructure, and data analytics.
-
-An **adaptable**, **committed**, and **results-driven** professional focused on delivering robust, efficient, and scalable solutions across various technologies and ecosystems.
+Focused on delivering high-impact results through clean code, AI-driven development (Cursor AI), and robust system architecture.
 
 </details>
 
 <details>
   <summary>🇧🇷 Português (Brasil)</summary>
 
-### 💼 Desenvolvedor Full Stack | Apaixonado por Tecnologias Web e Soluções Escaláveis
+### 💼 Engenheiro de Software Full Stack | +7 Anos de Experiência
+Desenvolvedor com sólida trajetória iniciada aos 14 anos de idade. Atualmente na **E-Tech**, atuando na modernização de sistemas legados com **PHP** e **Framework7**, além de construir aplicações modernas com **Next.js**, **React** e **Angular**.
 
-Profissional com **1,5 anos de experiência na E-Tech**, atuando na manutenção e evolução de sistemas legados utilizando **Framework7** e **PHP** (back-end). Também envolvido em projetos modernos com **Next.js**, **React.js** e **Angular**, com experiência prática em **Python**, **Java** e **AWS**.
+Especialista em criar soluções escaláveis e fluxos inteligentes com:
+* **Backend & Automação:** Node.js (NestJS), PHP, Python e n8n.
+* **Frontend:** Next.js, React, TypeScript e Tailwind CSS.
+* **Infra & Dados:** AWS, Docker, Kubernetes, PostgreSQL e MongoDB.
 
-Conhecimento em **bancos de dados relacionais e não relacionais**, como **PostgreSQL**, **MySQL** e **MongoDB**. Possui certificações em **Power BI**, **Docker** e **Kubernetes** (nível básico), evidenciando sua versatilidade em ambientes de desenvolvimento, infraestrutura e análise de dados.
-
-Profissional **adaptável**, **comprometido** e focado em entregar soluções robustas, eficientes e escaláveis em diferentes stacks e ecossistemas.
+Focado em entregar resultados de alto impacto através de código limpo, desenvolvimento orientado a IA (Cursor AI) e arquiteturas de sistemas robustas.
 
 </details>
+
+---
+
+### 🧠 Current Focus
+- 🤖 **AI & Automation:** Creating intelligent workflows with n8n and AI agents.
+- 🚀 **Full Stack:** Mastering NestJS and Microservices for global-scale projects.
+- 📈 **Entrepreneurship:** Growing **Vilo Tech** to deliver high-end tech services.
 
 ---
 
 ### 🛠️ Technologies & Tools
 
 <p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg" width="40" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" width="40" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="40" title="React" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" title="Next.js" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="40" title="PHP" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" title="Python" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" title="Docker" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" width="40" title="AWS" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40" title="PostgreSQL" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" width="40" title="MongoDB" />
 </p>
-
 
 ---
 
