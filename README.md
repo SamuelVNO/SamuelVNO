@@ -1,56 +1,40 @@
-# 👋 Hi, I'm Samuel
+# Olá, eu sou o Samuel 👋
 
-<details open>
-  <summary>🇺🇸 English</summary>
+**Engenheiro de Software Full Stack** — Node.js/NestJS & PHP | React/Next.js & Angular | AWS & DevOps
 
-### 💼 Full Stack Software Engineer | 7+ Years of Experience
-Professional with a solid background in software development, starting my journey at age 14. Currently at **Salte Tech**, I am responsible for the warehouse management ecosystem, architecting scalable solutions with **NestJS**, **Angular**, and **MySQL**. 
+Apaixonado por tecnologia desde os 14 anos. Hoje atuo unindo a solidez de sistemas
+legados (PHP) à velocidade de stacks modernas (Node.js, NestJS, React e Next.js),
+sempre equilibrando performance, escalabilidade e time-to-market.
 
-I also contribute to **E-Tech**, modernizing legacy systems using **PHP** and **Framework7**, and building modern platforms with **Next.js** and **React**. Previously, I ensured the stability of critical systems at **CASACOR**, focusing on SQL database optimization.
+🔭 **Atualmente:**
+- Desenvolvo o ecossistema de gestão de almoxarifado e estoque na **Salte Tecnologia** (NestJS + Angular + MySQL)
+- Mantenho projetos full stack (Next.js + Go + PostgreSQL) e a esteira de deploy na AWS na **E-Tech**
 
-I specialize in:
-* **Backend & Automation:** Node.js (NestJS), PHP, Python, and n8n.
-* **Frontend:** Angular, Next.js, React, TypeScript, and Tailwind CSS.
-* **Infrastructure & Data:** AWS, Linux (Ubuntu), Docker, Kubernetes, MySQL, and PostgreSQL.
+🎓 **Formação:** Bacharelado em Engenharia de Software — Estácio (em andamento)
 
-Focused on delivering high-impact results through clean code and AI-driven development, bridging the gap between complex business logic (Supply Chain) and robust architecture.
+💬 **Fale comigo sobre:** Node.js, NestJS, React, Next.js, arquitetura de APIs, modernização de sistemas legados
 
-</details>
-
-<details>
-  <summary>🇧🇷 Português (Brasil)</summary>
-
-### 💼 Engenheiro de Software Full Stack | +7 Anos de Experiência
-Desenvolvedor com sólida trajetória iniciada aos 14 anos de idade. Atualmente na **Salte Tech**, sou responsável técnico pela frente de almoxarifado, arquitetando soluções escaláveis com **NestJS**, **Angular** e **MySQL**.
-
-Também atuo na **E-Tech** com modernização de sistemas legados (**PHP/Framework7**) e desenvolvimento de aplicações modernas com **Next.js** e **React**. Minha bagagem inclui a sustentação de sistemas críticos na **CASACOR**, com foco em otimização de bancos de dados SQL e vivências em suporte de TI e logística.
-
-Especialista em:
-* **Backend & Automação:** Node.js (NestJS), PHP, Python e n8n.
-* **Frontend:** Angular, Next.js, React, TypeScript e Tailwind CSS.
-* **Infra & Dados:** AWS, Linux (Ubuntu), Docker, Kubernetes, MySQL e PostgreSQL.
-
-Focado em entregar resultados de alto impacto através de código limpo e desenvolvimento orientado a IA, unindo regras de negócio complexas (Supply Chain) a arquiteturas robustas.
-
-</details>
+📫 **Contato:** samvitor53@gmail.com · [LinkedIn](https://www.linkedin.com/in/samuelvno)
 
 ---
 
-### 🧠 Current Focus
-- 🤖 **AI & Automation:** Creating intelligent workflows with n8n and AI agents.
-- 📦 **Supply Chain Solutions:** Optimizing warehouse and logistics systems through software.
-- 🚀 **Full Stack:** Advanced NestJS and Microservices for global-scale projects.
-- 📈 **Entrepreneurship:** Growing **Vilo Tech** to deliver high-end tech services.
+### 🛠️ Stack
 
----
+![Node.js](https://img.shields.io/badge/-Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![NestJS](https://img.shields.io/badge/-NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
+![PHP](https://img.shields.io/badge/-PHP-777BB4?style=flat-square&logo=php&logoColor=white)
+![Go](https://img.shields.io/badge/-Go-00ADD8?style=flat-square&logo=go&logoColor=white)
+![React](https://img.shields.io/badge/-React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Angular](https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MySQL](https://img.shields.io/badge/-MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![AWS](https://img.shields.io/badge/-AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![Docker](https://img.shields.io/badge/-Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/-Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 
-### 🛠️ Technologies & Tools
+### 🚀 Projetos em destaque
 
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" width="40" title="TypeScript" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" width="40" title="Angular" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="40" title="Node.js" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" width="40" title="NestJS" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="40" title="Next.js" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" title="MySQL" />
-  <img src="https://cdn.
+- **[products-api](https://github.com/SamuelVNO/products-api)** — API REST de gestão de produtos (NestJS + PostgreSQL + TypeORM)
+- **[products-front](https://github.com/SamuelVNO/products-front)** — Front-end de e-commerce (Angular 19 + RxJS + Supabase)
+- **[shop-smartphones](https://github.com/SamuelVNO/shop-smatphones)** — Loja de smartphones (React + TypeScript + Vite)
