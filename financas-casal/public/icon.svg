@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Finanças do Casal">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#4338ca"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <path d="M256 118c-62 0-113 38-125 89h-27a16 16 0 0 0-16 16v58a16 16 0 0 0 16 16h13c8 21 23 39 42 52v33a16 16 0 0 0 16 16h34a16 16 0 0 0 16-16v-16h62v16a16 16 0 0 0 16 16h34a16 16 0 0 0 16-16v-33c30-21 49-53 49-89 0-40-23-75-58-96l14-42a12 12 0 0 0-15-15l-49 17a166 166 0 0 0-38-6z" fill="#fff" fill-opacity="0.95"/>
+  <circle cx="330" cy="238" r="18" fill="#4338ca"/>
+  <path d="M150 196h56" stroke="#4338ca" stroke-width="18" stroke-linecap="round"/>
+</svg>
