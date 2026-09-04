@@ -31,17 +31,17 @@ import {
   saveLocal,
 } from "./storage";
 import {
-  createHousehold as rpcCreate,
+  createHousehold as remoteCreate,
   getSession,
   isSyncConfigured,
-  joinHousehold as rpcJoin,
+  joinHousehold as remoteJoin,
   myHousehold,
   pullSnapshot,
   pushSnapshot,
-  signOut as sbSignOut,
+  signOut as remoteSignOut,
   subscribeHousehold,
   type Household,
-} from "./supabase";
+} from "./sync";
 import {
   addMonths,
   monthKey,
@@ -782,7 +782,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     async (name: string) => {
       setSyncState("syncing");
       try {
-        const h = await rpcCreate(name);
+        const h = await remoteCreate(name);
         setHousehold(h);
         await pushSnapshot(h.id, dataRef.current);
         setSyncState("idle");
@@ -800,7 +800,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     async (code: string) => {
       setSyncState("syncing");
       try {
-        const h = await rpcJoin(code);
+        const h = await remoteJoin(code);
         setHousehold(h);
         const remote = await pullSnapshot(h.id);
         const merged = remote ? adoptRemote(remote) : dataRef.current;
@@ -821,7 +821,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }, [bootstrapSync]);
 
   const disconnectSync = useCallback(async () => {
-    await sbSignOut();
+    await remoteSignOut();
     setHousehold(null);
     setSyncState(isSyncConfigured() ? "signed-out" : "off");
   }, []);

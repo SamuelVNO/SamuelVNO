@@ -35,7 +35,7 @@ import {
   Select,
 } from "@/components/ui";
 import { downloadBackup, readBackupFile } from "@/lib/storage";
-import { signIn, signUp } from "@/lib/supabase";
+import { signIn, signUp } from "@/lib/sync";
 import type { Category, Person } from "@/lib/types";
 import { cx } from "@/lib/utils";
 
@@ -391,7 +391,7 @@ function SyncPanel({
             <p className="text-sm font-medium">Funcionando só neste aparelho</p>
             <p className="text-xs text-muted mt-1 leading-relaxed">
               Tudo está salvo localmente e continua funcionando sem internet. Para ver os mesmos
-              dados no celular e no computador, configure as chaves do Supabase nas variáveis de
+              dados no celular e no computador, configure as chaves do Firebase nas variáveis de
               ambiente e recarregue o app. O passo a passo está no arquivo README do projeto.
             </p>
           </div>

@@ -97,38 +97,52 @@ Por padrão tudo é salvo no próprio navegador, no aparelho onde você usa. Nad
 e o app funciona sem internet.
 
 Para você e sua esposa verem os mesmos dados nos dois aparelhos, ative a sincronização
-com o Supabase, que é gratuita.
+com o Firebase, que é gratuita.
 
 ### Ativando a sincronização
 
-1. Crie um projeto em https://supabase.com (plano gratuito serve).
-2. No painel do projeto, abra **SQL Editor** e rode o conteúdo de
-   [`supabase/migrations/0001_init.sql`](supabase/migrations/0001_init.sql).
-   Ele cria as tabelas, as regras de acesso e a sincronização em tempo real.
-3. Em **Project Settings → API**, copie a *Project URL* e a chave *anon public*.
-4. Defina as variáveis de ambiente (na Vercel em **Settings → Environment Variables**,
+1. Crie um projeto em https://console.firebase.google.com (o plano gratuito Spark serve
+   de sobra: são 1 GB de dados e 20 mil gravações por dia).
+2. Em **Criação → Authentication → Sign-in method**, ative **E-mail/senha**.
+3. Em **Criação → Firestore Database**, clique em **Criar banco de dados** e escolha a
+   região `southamerica-east1`. Pode começar em modo de produção; as regras vêm no
+   passo seguinte.
+4. Ainda no Firestore, abra a aba **Regras**, cole o conteúdo de
+   [`firebase/firestore.rules`](firebase/firestore.rules) e publique.
+5. Em **Configurações do projeto → Seus aplicativos**, crie um aplicativo da Web
+   (ícone `</>`) e copie os valores do objeto `firebaseConfig`.
+6. Defina as variáveis de ambiente (na Vercel em **Settings → Environment Variables**,
    ou em um arquivo `.env.local` para rodar localmente):
 
    ```
-   NEXT_PUBLIC_SUPABASE_URL=https://xxxxxxxx.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-chave-anon
+   NEXT_PUBLIC_FIREBASE_API_KEY=AIza...
+   NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=seu-projeto.firebaseapp.com
+   NEXT_PUBLIC_FIREBASE_PROJECT_ID=seu-projeto
+   NEXT_PUBLIC_FIREBASE_APP_ID=1:123...:web:abc...
    ```
 
-5. Faça o deploy de novo (ou reinicie o `npm run dev`).
-6. No app, vá em **Configurações → Sincronizar** e crie sua conta.
-7. Toque em **Criar nosso lar**. Vai aparecer um código de convite de 8 letras.
-8. Sua esposa abre o mesmo endereço, cria a conta dela e usa esse código em
-   **Já tem um código de convite?**. Pronto: os dois passam a ver os mesmos dados,
-   e as alterações aparecem na hora no outro aparelho.
+7. Em **Authentication → Settings → Domínios autorizados**, adicione o endereço do app
+   na Vercel.
+8. Faça o deploy de novo (ou reinicie o `npm run dev`).
+9. No app, vá em **Configurações → Sincronizar** e crie sua conta.
+10. Toque em **Criar nosso lar**. Vai aparecer um código de convite de 8 letras.
+11. Sua esposa abre o mesmo endereço, cria a conta dela e usa esse código em
+    **Já tem um código de convite?**. Pronto: os dois passam a ver os mesmos dados,
+    e as alterações aparecem na hora no outro aparelho.
 
 Se preferir manter o app só no aparelho, é só não configurar nada. Tudo continua
 funcionando, e o backup em JSON serve para levar os dados de um lugar para outro.
 
 ### Segurança dos dados
 
-O acesso é protegido por Row Level Security no banco: cada pessoa só consegue ler e
-escrever no lar de que faz parte. A chave `anon` é pública por natureza e pode ficar no
-código do site; quem manda são as regras do banco.
+O acesso é protegido pelas regras do Firestore: cada pessoa só consegue ler e escrever
+no lar de que faz parte, e a única alteração permitida a quem está de fora é adicionar
+o próprio usuário à lista de membros usando o código de convite. As chaves
+`NEXT_PUBLIC_FIREBASE_*` são públicas por natureza e podem ficar no código do site;
+quem manda são as regras.
+
+Os dados do casal ficam em um único documento por lar, gravado como JSON. O limite do
+Firestore é 1 MB por documento, o que dá dezenas de milhares de lançamentos.
 
 ## Instalando no celular
 
@@ -149,7 +163,7 @@ Depois disso o app abre em tela cheia, com ícone próprio, e funciona mesmo sem
 | Estilo | Tailwind CSS 4 com variáveis de tema |
 | Gráficos | Recharts |
 | Ícones | Lucide |
-| Sincronização | Supabase (Postgres, Auth e Realtime), opcional |
+| Sincronização | Firebase (Auth e Firestore em tempo real), opcional |
 | Hospedagem | Vercel |
 
 Estrutura das pastas:
@@ -163,9 +177,9 @@ src/
     finance.ts     todos os cálculos financeiros
     store.tsx      estado do app e operações
     storage.ts     gravação local, backup e mesclagem de versões
-    supabase.ts    autenticação e sincronização
-supabase/
-  migrations/      SQL para criar o banco da sincronização
+    sync.ts        autenticação e sincronização
+firebase/
+  firestore.rules  regras de acesso do banco de sincronização
 ```
 
 Os cálculos ficam separados da interface em `src/lib/finance.ts`, então saldo, fatura,

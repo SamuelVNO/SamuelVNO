@@ -1,0 +1,55 @@
+rules_version = '2';
+
+// Regras de acesso do Finanças do Casal.
+// Cole este conteúdo em Firestore Database > Rules, no painel do Firebase.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isMember() {
+      return signedIn() && request.auth.uid in resource.data.members;
+    }
+
+    // Só entra quem está adicionando a si mesmo à lista de membros,
+    // sem mexer em mais nenhum campo.
+    function joiningSelf() {
+      let next = request.resource.data;
+      let prev = resource.data;
+      return signedIn()
+        && next.diff(prev).affectedKeys().hasOnly(['members'])
+        && next.members.hasAll(prev.members)
+        && next.members.size() == prev.members.size() + 1
+        && request.auth.uid in next.members;
+    }
+
+    match /households/{householdId} {
+      // A busca do app filtra por members array-contains uid,
+      // então cada documento devolvido passa por esta regra.
+      allow read: if isMember();
+
+      allow create: if signedIn()
+        && request.resource.data.members == [request.auth.uid]
+        && request.resource.data.ownerId == request.auth.uid;
+
+      allow update: if isMember() || joiningSelf();
+
+      // Um lar nunca é apagado pelo app.
+      allow delete: if false;
+    }
+
+    // Tabela de códigos de convite: só leitura direta pelo código.
+    match /invites/{code} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create: if signedIn();
+      allow update, delete: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
