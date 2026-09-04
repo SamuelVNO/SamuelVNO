@@ -62,6 +62,35 @@ npm run dev
 
 Abra http://localhost:3000.
 
+## Colocando no ar (Vercel)
+
+O código está em `financas-casal/` dentro do repositório `SamuelVNO/SamuelVNO`,
+no branch `claude/finance-control-app-j5kjpe`.
+
+Para publicar, a Vercel precisa enxergar este repositório. Hoje o app do GitHub
+da Vercel está instalado na sua conta, mas sem acesso a `SamuelVNO/SamuelVNO`.
+São dois passos:
+
+1. Abra https://github.com/apps/vercel e, em **Configure**, adicione
+   `SamuelVNO/SamuelVNO` à lista de repositórios permitidos.
+2. Na Vercel, clique em **Add New → Project**, escolha o repositório e, em
+   **Root Directory**, selecione a pasta `financas-casal`. O framework Next.js
+   é detectado sozinho.
+
+A partir daí cada push publica uma nova versão automaticamente.
+
+Se preferir um repositório só para este projeto, crie um `financas-casal` vazio
+no GitHub e mova a pasta para lá:
+
+```bash
+cd financas-casal
+git init && git add . && git commit -m "Primeira versao"
+git remote add origin https://github.com/SamuelVNO/financas-casal.git
+git push -u origin main
+```
+
+Nesse caso o Root Directory na Vercel fica na raiz.
+
 ## Onde os dados ficam
 
 Por padrão tudo é salvo no próprio navegador, no aparelho onde você usa. Nada sai dali,
