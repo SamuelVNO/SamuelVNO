@@ -9,14 +9,12 @@ import {
   Layers,
   PiggyBank,
   Target,
-  TrendingDown,
-  TrendingUp,
   Wallet,
 } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { useUi } from "@/components/UiProvider";
 import { PageHeader } from "@/components/MonthSelector";
-import { StatCard } from "@/components/StatCard";
+import { MoneyOverview } from "@/components/MoneyOverview";
 import { Card, ProgressBar, SectionTitle, Money } from "@/components/ui";
 import { DonutChart, IncomeExpenseChart } from "@/components/charts";
 import { TransactionRow } from "@/components/TransactionList";
@@ -106,52 +104,16 @@ export default function DashboardPage() {
         </Link>
       )}
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <StatCard
-          label="Saldo disponível"
-          value={available}
-          tone={available >= 0 ? "neutral" : "negative"}
-          icon={<Wallet size={14} />}
-          hide={hide}
-          hint={cardDebt > 0 ? `Cartões: ${formatMoney(cardDebt, hide)}` : "Somando todas as contas"}
-        />
-        <StatCard
-          label="Receitas do mês"
-          value={summary.income}
-          tone="positive"
-          icon={<TrendingUp size={14} />}
-          hide={hide}
-          hint={
-            summary.incomePending > 0
-              ? `${formatMoney(summary.incomePending, hide)} a receber`
-              : "Tudo recebido"
-          }
-        />
-        <StatCard
-          label="Despesas do mês"
-          value={summary.expense}
-          tone="negative"
-          icon={<TrendingDown size={14} />}
-          hide={hide}
-          hint={
-            summary.expensePending > 0
-              ? `${formatMoney(summary.expensePending, hide)} a pagar`
-              : "Tudo pago"
-          }
-        />
-        <StatCard
-          label="Resultado"
-          value={summary.balance}
-          tone={summary.balance >= 0 ? "positive" : "negative"}
-          icon={<PiggyBank size={14} />}
-          hide={hide}
-          hint={
-            summary.income > 0
-              ? `${(rate * 100).toFixed(0)}% da receita ${summary.balance >= 0 ? "sobrou" : "no vermelho"}`
-              : "Sem receitas no mês"
-          }
-        />
-      </div>
+      <MoneyOverview
+        available={available}
+        income={summary.income}
+        expense={summary.expense}
+        incomePending={summary.incomePending}
+        expensePending={summary.expensePending}
+        cardDebt={cardDebt}
+        rate={rate}
+        hide={hide}
+      />
 
       <div className="grid lg:grid-cols-2 gap-4">
         <Card className="p-4">

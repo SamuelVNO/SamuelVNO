@@ -1,8 +1,9 @@
 "use client";
 
 import { Suspense, useMemo, useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Filter, Search, X } from "lucide-react";
+import { ArrowRight, CreditCard, Filter, Layers, Repeat, Search, X } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { useUi } from "@/components/UiProvider";
 import { PageHeader } from "@/components/MonthSelector";
@@ -14,6 +15,7 @@ import type { TxKind } from "@/lib/types";
 
 type Status = "todos" | "pagos" | "pendentes" | "atrasados";
 type KindFilter = "todos" | TxKind;
+type Origin = "todas" | "parceladas" | "fixas" | "cartao";
 
 export default function TransactionsPage() {
   return (
@@ -33,6 +35,7 @@ function TransactionsInner() {
     params.get("filtro") === "atrasados" ? "atrasados" : "todos",
   );
   const [kind, setKind] = useState<KindFilter>("todos");
+  const [origin, setOrigin] = useState<Origin>("todas");
   const [accountId, setAccountId] = useState("");
   const [categoryId, setCategoryId] = useState("");
   const [personId, setPersonId] = useState("");
@@ -46,11 +49,19 @@ function TransactionsInner() {
     [data.transactions, month, allMonths],
   );
 
+  const creditCardIds = useMemo(
+    () => new Set(data.accounts.filter((a) => a.type === "credit_card").map((a) => a.id)),
+    [data.accounts],
+  );
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return base
       .filter((t) => {
         if (kind !== "todos" && t.kind !== kind) return false;
+        if (origin === "parceladas" && !t.installmentId) return false;
+        if (origin === "fixas" && !t.recurrenceId) return false;
+        if (origin === "cartao" && !creditCardIds.has(t.accountId)) return false;
         if (status === "pagos" && !t.paid) return false;
         if (status === "pendentes" && t.paid) return false;
         if (status === "atrasados" && (t.paid || t.date >= today)) return false;
@@ -62,7 +73,7 @@ function TransactionsInner() {
         return true;
       })
       .sort((a, b) => b.date.localeCompare(a.date) || b.createdAt.localeCompare(a.createdAt));
-  }, [base, search, status, kind, accountId, categoryId, personId, today]);
+  }, [base, search, status, kind, origin, creditCardIds, accountId, categoryId, personId, today]);
 
   const totals = useMemo(() => {
     let income = 0;
@@ -73,6 +84,16 @@ function TransactionsInner() {
     }
     return { income, expense, balance: income - expense };
   }, [filtered]);
+
+  const originCounts = useMemo(
+    () => ({
+      parceladas: base.filter((t) => t.installmentId).length,
+      fixas: base.filter((t) => t.recurrenceId).length,
+      cartao: base.filter((t) => creditCardIds.has(t.accountId)).length,
+    }),
+    [base, creditCardIds],
+  );
+  const hasCreditCard = data.accounts.some((a) => a.type === "credit_card");
 
   const summary = monthSummary(data.transactions, month);
   const activeFilters = [accountId, categoryId, personId].filter(Boolean).length + (kind !== "todos" ? 1 : 0);
@@ -148,6 +169,40 @@ function TransactionsInner() {
         </button>
       </div>
 
+      <div className="flex gap-2 overflow-x-auto no-scrollbar -mx-1 px-1">
+        {(
+          [
+            { value: "todas" as Origin, label: "Tudo", icon: null },
+            { value: "parceladas" as Origin, label: "Parceladas", icon: Layers, count: originCounts.parceladas },
+            { value: "fixas" as Origin, label: "Fixas", icon: Repeat, count: originCounts.fixas },
+            ...(hasCreditCard
+              ? [{ value: "cartao" as Origin, label: "Cartão", icon: CreditCard, count: originCounts.cartao }]
+              : []),
+          ] as Array<{ value: Origin; label: string; icon: typeof Layers | null; count?: number }>
+        ).map((o) => {
+          const Icon = o.icon;
+          const active = origin === o.value;
+          return (
+            <button
+              key={o.value}
+              onClick={() => setOrigin(o.value)}
+              className={cx(
+                "px-3 h-8 rounded-full text-[13px] font-medium border whitespace-nowrap transition-colors inline-flex items-center gap-1.5",
+                active
+                  ? "bg-brand-600/10 border-brand-500 text-brand-600"
+                  : "border-app text-muted hover:bg-surface-2",
+              )}
+            >
+              {Icon && <Icon size={13} />}
+              {o.label}
+              {o.count !== undefined && o.count > 0 && (
+                <span className="opacity-70 tabular-nums">{o.count}</span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
       <Card className="p-3.5 grid grid-cols-3 gap-2 text-center">
         <div>
           <p className="text-[10px] uppercase tracking-wide text-muted">Receitas</p>
@@ -174,10 +229,22 @@ function TransactionsInner() {
         </div>
       </Card>
 
+      {(origin === "parceladas" || origin === "fixas") && (
+        <Link
+          href={origin === "parceladas" ? "/parcelas" : "/fixas"}
+          className="flex items-center justify-between text-xs text-brand-600 font-medium px-1 -mb-1"
+        >
+          {origin === "parceladas"
+            ? "Gerenciar compras parceladas (pagar tudo de uma vez, excluir)"
+            : "Gerenciar contas fixas (pausar, editar recorrência)"}
+          <ArrowRight size={14} />
+        </Link>
+      )}
+
       <TransactionList
         transactions={filtered}
         emptyMessage={
-          search || activeFilters
+          search || activeFilters || origin !== "todas"
             ? "Nenhum lançamento encontrado com esses filtros."
             : `Nada lançado ainda${allMonths ? "" : " neste mês"}. Use o botão + para começar.`
         }

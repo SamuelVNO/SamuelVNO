@@ -13,7 +13,7 @@ import { formatMoney } from "@/lib/utils";
 export default function MorePage() {
   const { data } = useStore();
   const { hide } = useUi();
-  const items = ALL_NAV.filter((i) => i.href !== "/" && i.href !== "/lancamentos" && i.href !== "/parcelas");
+  const items = ALL_NAV.filter((i) => i.href !== "/" && i.href !== "/lancamentos" && i.href !== "/contas");
 
   return (
     <div className="space-y-5">

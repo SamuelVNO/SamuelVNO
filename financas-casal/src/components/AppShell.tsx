@@ -36,14 +36,14 @@ interface NavItem {
 const PRIMARY: NavItem[] = [
   { href: "/", label: "Início", icon: LayoutDashboard },
   { href: "/lancamentos", label: "Lançamentos", icon: ArrowLeftRight },
-  { href: "/parcelas", label: "Parcelas", icon: CreditCard },
   { href: "/contas", label: "Contas", icon: Wallet },
 ];
 
 const SECONDARY: NavItem[] = [
+  { href: "/parcelas", label: "Parcelas", icon: CreditCard },
+  { href: "/fixas", label: "Contas fixas", icon: CalendarClock },
   { href: "/orcamentos", label: "Orçamentos", icon: PiggyBank },
   { href: "/metas", label: "Metas", icon: Target },
-  { href: "/fixas", label: "Contas fixas", icon: CalendarClock },
   { href: "/relatorios", label: "Relatórios", icon: BarChart3 },
   { href: "/configuracoes", label: "Configurações", icon: Settings },
 ];
@@ -147,14 +147,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <Plus size={24} />
             </button>
           </div>
-          <TabLink item={PRIMARY[2]} active={isActive("/parcelas")} />
+          <TabLink item={PRIMARY[2]} active={isActive("/contas")} />
           <TabLink
             item={{ href: "/mais", label: "Mais", icon: MoreHorizontal }}
-            active={
-              pathname.startsWith("/mais") ||
-              SECONDARY.some((s) => pathname.startsWith(s.href)) ||
-              pathname.startsWith("/contas")
-            }
+            active={pathname.startsWith("/mais") || SECONDARY.some((s) => pathname.startsWith(s.href))}
           />
         </div>
       </nav>
