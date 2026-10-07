@@ -1,0 +1,41 @@
+{
+  "name": "orquestrador",
+  "version": "0.1.0",
+  "description": "Painel por empresa: projetos, branches, épicos, tarefas, tokens, modelos e agentes em paralelo",
+  "author": {
+    "name": "SamuelVNO"
+  },
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "abrirAoIniciar": {
+      "type": "boolean",
+      "title": "Abrir o painel ao iniciar",
+      "description": "Abre o painel do Orquestrador quando a sessão começa (no terminal, a partir de 144 colunas).",
+      "default": true
+    },
+    "modeloExecutores": {
+      "type": "string",
+      "title": "Modelo dos executores",
+      "description": "Modelo dos agentes que executam as subtarefas em paralelo. inherit usa o modelo da sessão.",
+      "default": "inherit",
+      "options": [
+        "inherit",
+        "opus",
+        "sonnet",
+        "haiku"
+      ]
+    },
+    "modeloRevisor": {
+      "type": "string",
+      "title": "Modelo do revisor",
+      "description": "Modelo do agente que revisa e valida o resultado antes da entrega. inherit usa o modelo da sessão.",
+      "default": "inherit",
+      "options": [
+        "inherit",
+        "opus",
+        "sonnet",
+        "haiku"
+      ]
+    }
+  }
+}

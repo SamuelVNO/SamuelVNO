@@ -1,0 +1,14 @@
+{
+  "name": "samuelvno",
+  "description": "Mods para o Claude Code feitos por SamuelVNO",
+  "owner": {
+    "name": "SamuelVNO"
+  },
+  "plugins": [
+    {
+      "name": "orquestrador",
+      "source": "./claude-mods/orquestrador",
+      "description": "Painel por empresa: projetos, branches, épicos, tarefas, tokens, modelos e agentes em paralelo"
+    }
+  ]
+}
