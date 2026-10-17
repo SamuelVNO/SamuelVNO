@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="330" viewBox="0 0 880 330" role="img" aria-label="Samuel Vitor — Engenheiro de Software Full Stack">
+  <style>
+    .bg{fill:#0d1117}.bar{fill:#161b22}.frame{fill:none;stroke:#30363d}
+    text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:15px}
+    .p{fill:#3fb950}.c{fill:#e6edf3}.out{fill:#8b949e}.hl{fill:#58a6ff}.ok{fill:#3fb950}.y{fill:#d29922}.t{fill:#8b949e;font-size:12px}
+    .l{animation:in .35s ease both}
+    .l1{animation-delay:.2s}.l2{animation-delay:.8s}.l3{animation-delay:1.4s}.l4{animation-delay:1.8s}.l5{animation-delay:2.2s}.l6{animation-delay:2.6s}.l7{animation-delay:3.2s}.l8{animation-delay:3.6s}.l9{animation-delay:4.2s}.l10{animation-delay:4.6s}
+    .cur{animation:blink 1s step-end infinite;animation-delay:4.8s;fill:#e6edf3}
+    @keyframes in{from{opacity:0}to{opacity:1}}
+    @keyframes blink{50%{opacity:0}}
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="879" height="329" rx="12"/>
+  <path class="bar" d="M12.5 .5h855a12 12 0 0 1 12 12v22H.5v-22a12 12 0 0 1 12-12z"/>
+  <rect class="frame" x="0.5" y="0.5" width="879" height="329" rx="12"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f56"/><circle cx="42" cy="17" r="6" fill="#ffbd2e"/><circle cx="62" cy="17" r="6" fill="#27c93f"/>
+  <text class="t" x="440" y="21" text-anchor="middle">samuel@vale-do-paraiba: ~</text>
+
+  <text class="l l1" x="24" y="64"><tspan class="p">$</tspan><tspan class="c"> whoami</tspan></text>
+  <text class="l l2" x="24" y="88"><tspan class="hl">Samuel Vitor</tspan><tspan class="c"> — Engenheiro de Software Full Stack</tspan></text>
+
+  <text class="l l3" x="24" y="122"><tspan class="p">$</tspan><tspan class="c"> cat impacto.txt</tspan></text>
+  <text class="l l4" x="24" y="146"><tspan class="ok">✔</tspan><tspan class="c"> 350+ pull requests integrados em 2 anos, via code review</tspan></text>
+  <text class="l l5" x="24" y="170"><tspan class="ok">✔</tspan><tspan class="c"> Lead técnico do estoque num time de ~17 engenheiros</tspan></text>
+  <text class="l l6" x="24" y="194"><tspan class="ok">✔</tspan><tspan class="c"> Consulta de </tspan><tspan class="y">29,4 ms → 0,56 ms</tspan><tspan class="c"> com 300 mil pedidos</tspan></text>
+
+  <text class="l l7" x="24" y="228"><tspan class="p">$</tspan><tspan class="c"> stack --top</tspan></text>
+  <text class="l l8" x="24" y="252"><tspan class="out">NestJS · Angular · React · Go · Java/Spring · PostgreSQL · Kafka · AWS</tspan></text>
+
+  <text class="l l9" x="24" y="286"><tspan class="p">$</tspan><tspan class="c"> status</tspan></text>
+  <text class="l l10" x="24" y="310"><tspan class="ok">●</tspan><tspan class="c"> aberto a vagas remotas</tspan><tspan class="out"> · Taubaté/SP · CLT ou PJ</tspan><tspan class="cur"> ▍</tspan></text>
+</svg>
